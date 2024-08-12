@@ -1,0 +1,54 @@
+# Node modules directory
+node_modules/
+
+# Log files
+*.log
+
+# Environment files
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# npm package lock file
+package-lock.json
+
+# Yarn package lock file
+yarn.lock
+
+# Build output
+dist/
+build/
+
+# IDE/editor directories
+.vscode/
+.idea/
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Optional npm cache directory
+.npm/
+
+# Debug files
+*.pid
+*.seed
+
+# Backup files
+*.bak
+*.orig
+*.swp
+
+# Coverage folder for code coverage results
+coverage/
+
+# Local development environment files
+.env.local
+.env.development.local
+.env.test.local
