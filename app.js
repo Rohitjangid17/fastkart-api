@@ -4,7 +4,7 @@ const port = 3000;
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.send("Server Running");
+    res.json({ message: "Helloworld from backend" });
 });
 
 app.listen(port, () => {
