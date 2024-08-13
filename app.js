@@ -14,7 +14,7 @@ app.use("/api/products", productRoutes);
 
 // database connection
 const connectDb = async () => {
-    await mongoose.connect("mongodb://localhost:27017", {
+    await mongoose.connect("mongodb+srv://fdeveloperrohitjangid:F0wx7DlSFCV6IFrQ@cluster0.a9dfk.mongodb.net/", {
         dbName: "fastkartDb"
     });
     console.log("mongodb connected");
