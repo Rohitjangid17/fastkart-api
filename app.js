@@ -6,7 +6,8 @@ const port = 3000;
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.json({message: "Rohit jangid fullstack developer."});
+    res.json({ message: "Rohit jangid fullstack developer." });
+});
 
 // Routes call
 app.use("/api/products", productRoutes);
@@ -22,5 +23,5 @@ connectDb().catch((error) => {
 });
 
 app.listen(port, () => {
-    console.log("Server running on port", port);
+    console.log(`Server running on port ${port}`);
 });
