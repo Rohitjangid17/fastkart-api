@@ -137,7 +137,7 @@ app.use("/api/products", productRoutes);
 
 // database connection
 const connectDb = async () => {
-    await mongoose.connect("mongodb+srv://fdeveloperrohitjangid:F0wx7DlSFCV6IFrQ@cluster0.a9dfk.mongodb.net/?retryWrites=true&w=majority");
+    await mongoose.connect("mongodb+srv://fdeveloperrohitjangid:RUkcWQAkmtx4IZ7h@fastkartnew.ywhjl.mongodb.net/");
     console.log("mongodb connected");
 }
 
