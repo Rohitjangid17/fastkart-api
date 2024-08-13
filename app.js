@@ -14,7 +14,7 @@ app.use("/api/products", productRoutes);
 
 // database connection
 const connectDb = async () => {
-    await mongoose.connect("mongodb+srv://fdeveloperrohitjangid:F0wx7DlSFCV6IFrQ@cluster0.a9dfk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
+    await mongoose.connect("mongodb+srv://fdeveloperrohitjangid:F0wx7DlSFCV6IFrQ@cluster0.a9dfk.mongodb.net/?retryWrites=true&w=majority");
     console.log("mongodb connected");
 }
 
