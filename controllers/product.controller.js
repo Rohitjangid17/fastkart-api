@@ -15,4 +15,9 @@ const getProductList = async () => {
     return productList.map(product => product.toObject());
 }
 
-module.exports = { createProduct, getProductList };
+// delete product
+const deleteProductById = async (productId) => {
+    await Product.findByIdAndDelete(productId);
+}
+
+module.exports = { createProduct, getProductList, deleteProductById };
