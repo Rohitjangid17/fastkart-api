@@ -20,4 +20,15 @@ const deleteProductById = async (productId) => {
     await Product.findByIdAndDelete(productId);
 }
 
-module.exports = { createProduct, getProductList, deleteProductById };
+// update product by id
+const updateProductById = async (productId, productModel) => {
+    await Product.findOneAndUpdate({ _id: productId }, productModel);
+}
+
+// get product by id
+const getProductById = async (productId) => {
+    const product = await Product.findById(productId);
+    return product?.toObject();
+}
+
+module.exports = { createProduct, getProductList, deleteProductById, updateProductById, getProductById };
