@@ -19,10 +19,10 @@ app.use("/api/categories", categoryRoutes);
 
 // database connection
 const connectDb = async () => {
-    // await mongoose.connect("mongodb+srv://fdeveloperrohitjangid:RUkcWQAkmtx4IZ7h@fastkartnew.ywhjl.mongodb.net/");
-    await mongoose.connect("mongodb://localhost:27017", {
-        dbName: "fastkartDb"
-    });
+    await mongoose.connect("mongodb+srv://fdeveloperrohitjangid:RUkcWQAkmtx4IZ7h@fastkartnew.ywhjl.mongodb.net/");
+    // await mongoose.connect("mongodb://localhost:27017", {
+    //     dbName: "fastkartDb"
+    // });
     console.log("mongodb connected");
 }
 
