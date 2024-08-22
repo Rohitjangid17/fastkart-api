@@ -22,13 +22,13 @@ const deleteCategoryById = async (categoryId) => {
 
 // get category by id
 const getCategoryById = async (categoryId) => {
-    const product = await Category.findById(categoryId);
-    return product?.toObject();
+    const category = await Category.findById(categoryId);
+    return category?.toObject();
 }
 
 // update category by id
 const updateCategoryById = async (categoryId, categoryModel) => {
-    await Product.findOneAndUpdate({ _id: categoryId }, categoryModel);
+    await Category.findOneAndUpdate({ _id: categoryId }, categoryModel);
 }
 
 module.exports = { createCategory, getCategoryList, deleteCategoryById, getCategoryById, updateCategoryById };
