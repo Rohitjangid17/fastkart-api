@@ -15,4 +15,20 @@ const getCategoryList = async () => {
     return categories.map(category => category.toObject());
 }
 
-module.exports = { createCategory, getCategoryList };
+// delete category
+const deleteCategoryById = async (categoryId) => {
+    await Category.findByIdAndDelete(categoryId);
+}
+
+// get category by id
+const getCategoryById = async (categoryId) => {
+    const product = await Category.findById(categoryId);
+    return product?.toObject();
+}
+
+// update category by id
+const updateCategoryById = async (categoryId, categoryModel) => {
+    await Product.findOneAndUpdate({ _id: categoryId }, categoryModel);
+}
+
+module.exports = { createCategory, getCategoryList, deleteCategoryById, getCategoryById, updateCategoryById };
