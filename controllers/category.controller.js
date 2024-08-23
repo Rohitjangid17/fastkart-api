@@ -30,5 +30,5 @@ const getCategoryById = async (categoryId) => {
 const updateCategoryById = async (categoryId, categoryModel) => {
     await Category.findOneAndUpdate({ _id: categoryId }, categoryModel);
 }
-
+    
 module.exports = { createCategory, getCategoryList, deleteCategoryById, getCategoryById, updateCategoryById };
