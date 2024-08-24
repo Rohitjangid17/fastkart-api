@@ -7,9 +7,9 @@ router.post("/", async (req, res) => {
     try {
         const model = req.body;
         const category = await createCategory(model);
-        res.status(201).send(category);
+        res.status(201).json(category);
     } catch (error) {
-        res.status(500).send({ error: error.message });
+        res.status(500).json({ error: error.message });
     }
 });
 
@@ -17,32 +17,44 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
     try {
         const categories = await getCategoryList();
-        res.send(categories);
+        res.status(201).json(categories);
     } catch (error) {
-        res.status(500).send({ error: error.message });
+        res.status(500).json({ error: error.message });
     }
 });
 
 // Route to delete category
 router.delete("/:id", async (req, res) => {
-    const id = req.params["id"];
-    await deleteCategoryById(id);
-    res.send({ message: "Category successfully deleted" });
+    try {
+        const id = req.params["id"];
+        await deleteCategoryById(id);
+        res.status(201).json({ message: "Category successfully deleted" });
+    } catch (error) {
+        res.status(500).send({ error: error.message });
+    }
 });
 
 // Route to get category by id
 router.get("/:id", async (req, res) => {
-    const id = req.params["id"];
-    const category = await getCategoryById(id);
-    res.send(category);
+    try {
+        const id = req.params["id"];
+        const category = await getCategoryById(id);
+        res.status(201).json(category);
+    } catch (error) {
+        res.status(500).send({ error: error.message });
+    }
 });
 
 // Route to update category by id
 router.put("/:id", async (req, res) => {
-    const model = req.body;
-    const id = req.params["id"];
-    await updateCategoryById(id, model);
-    res.send({ message: "Category Update" });
+    try {
+        const model = req.body;
+        const id = req.params["id"];
+        await updateCategoryById(id, model);
+        res.status(201).json({ message: "Category Update" });
+    } catch (error) {
+        res.status(500).send({ error: error.message });
+    }
 });
 
 module.exports = router;
