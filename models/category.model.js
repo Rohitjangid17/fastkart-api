@@ -4,7 +4,7 @@ const categorySchema = new mongoose.Schema({
     title: String,
     description: String,
     image: String,
-    createdAt: Date
+    createdAt: { type: Date, default: Date.now }
 });
 
 const Category = mongoose.model("categories", categorySchema);
