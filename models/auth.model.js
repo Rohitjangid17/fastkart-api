@@ -28,6 +28,15 @@ const storeSchema = new mongoose.Schema({
         lowercase: true,
         unique: true,
     },
+    mobileNumber: {
+        type: Number,
+        required: true,
+        unique: true,
+    },
+    password: {
+        type: String,
+        required: true, 
+    },
     country: {
         type: String,
         required: true,
