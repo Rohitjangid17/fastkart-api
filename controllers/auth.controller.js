@@ -36,7 +36,7 @@ const signInStore = async (req, res) => {
         }
 
         const token = jwt.sign({ id: store._id }, "Ctpl#2023?");
-        res.status(200).json({ token }); // Changed status code to 200 for successful login
+        res.status(200).json({ ...req.body, token });
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
